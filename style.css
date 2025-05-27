@@ -1,17 +1,18 @@
-/* Estilo principal para o Agrinho 2025 */
+/* Estilos gerais */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #e6f9e6, #ffffff);
-    color: #2e4d2e;
+    background: linear-gradient(to bottom, #e8f5e9, #ffffff);
+    color: #2e7d32;
 }
 
+/* Cabeçalho */
 header {
-    background-color: #4caf50;
+    background-color: #43a047;
     color: white;
     padding: 2rem;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -19,24 +20,54 @@ header h1 {
     font-size: 2.5rem;
 }
 
+header p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Conteúdo principal */
 main {
     padding: 2rem;
     max-width: 1000px;
     margin: auto;
 }
 
-section {
-    background-color: #ffffff;
+/* Seções com borda animada */
+.section-animada {
+    border: 3px solid transparent;
+    border-radius: 20px;
     padding: 1.5rem;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    transition: border 0.3s ease;
     margin-bottom: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    color: #388e3c;
+.section-animada::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #4caf50, #81c784, #aed581);
+    z-index: -1;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
+.section-animada:hover::before {
+    opacity: 1;
+}
+
+.section-animada:hover {
+    border: 3px solid #ffffff;
+}
+
+/* Rodapé */
 footer {
     text-align: center;
     background-color: #2e7d32;
@@ -44,13 +75,4 @@ footer {
     padding: 1rem;
     margin-top: 2rem;
     font-size: 0.9rem;
-}
-
-a {
-    color: #1b5e20;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
