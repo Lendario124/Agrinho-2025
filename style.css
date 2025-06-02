@@ -1,88 +1,111 @@
-/* Estilos gerais */
+/* Resetting some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #e8f5e9, #ffffff);
-    color: #2e7d32;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 30px;
 }
 
-/* Cabeçalho */
-header {
-    background-color: #43a047;
-    color: white;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Hero section styling */
+.hero {
+  background: url('img/hero-background.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 80px 0;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
-header p {
-    margin-top: 0.5rem;
-    font-size: 1.2rem;
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
-/* Conteúdo principal */
-main {
-    padding: 2rem;
-    max-width: 1000px;
-    margin: auto;
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* Seções com borda animada */
-.section-animada {
-    border: 3px solid transparent;
-    border-radius: 20px;
-    padding: 1.5rem;
-    background-color: #ffffff;
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-    transition: border 0.3s ease;
-    margin-bottom: 2rem;
+/* Main content layout */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 50px;
 }
 
-.section-animada::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #4caf50, #81c784, #aed581);
-    z-index: -1;
-    border-radius: 20px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.sobre, .detalhes {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.section-animada:hover::before {
-    opacity: 1;
+.sobre h3, .detalhes h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
-.section-animada:hover {
-    border: 3px solid #ffffff;
+.sobre p, .detalhes p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
-/* Rodapé */
+.sobre img, .detalhes img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.sobre .imagem, .detalhes .imagem {
+  border-radius: 10px;
+}
+
+ul.conclusao {
+  background-color: #e9f7ef;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  color: #2d6a4f;
+}
+
+/* Footer */
 footer {
-    text-align: center;
-    background-color: #2e7d32;
-    color: white;
-    padding: 1rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #1d3557;
+  color: white;
+  font-size: 1rem;
+  margin-top: 40px;
 }
 
-/seu-projeto
-├── index.html
-├── style.css
-├── favicon.png
-└── /img
-    ├── banner.jpg
-    ├── sobre-tema.jpg
-    ├── historia.jpg
-    └── campo-cidade.jpg
+footer p {
+  margin: 0;
+}
+
+/* Hover effect for icons and links */
+a, .hero h1 i, .hero h2 i, .detalhes ul li i {
+  transition: all 0.3s ease;
+}
+
+a:hover, .hero h1 i:hover, .hero h2 i:hover, .detalhes ul li i:hover {
+  color: #28a745;
+  transform: scale(1.1);
+}
